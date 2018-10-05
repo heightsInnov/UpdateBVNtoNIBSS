@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.unionbank.webpay.db.dao.TransactionsDAO" table="UBNPAY_Transactions">
+        <id column="txn_id"  name="txnId" type="long">
+            <generator class="sequence">
+                <param name="sequence">TR_CRE_SEQ</param>
+            </generator>
+        </id>
+        <property column="tnx_ref" name="tnxRef"   type="string"/>
+        <property column="pay_ref" name="payRef"   type="string"/>
+        <property column="amount_local" name="amountLocal"  not-null="true" type="java.math.BigDecimal"/>
+        <property column="product_id" name="productId" type="string"/>
+        <property column="pay_item_id" name="payItemId"  not-null="true"  type="string"/>
+        <property column="response_code" name="responseCode"    type="string"/>
+        <property column="response_desc" name="responseDesc"   type="string"/>
+        <property column="currency_c" name="currencyC"    type="string"/>
+         <property column="pay_reference" name="payReference"    type="string"/>
+         <property column="merch_txn_ref" name="merchTxnRef"  not-null="true"  type="string"/>
+         <property column="response_code_update_date" name="responseCodeUpdateDate" type="java.util.Date"/>
+        <property column="date_created" name="dateCreated"  not-null="true" type="java.util.Date"/>
+    </class>
+</hibernate-mapping>

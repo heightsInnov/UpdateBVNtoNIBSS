@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.unionbank.com.ng/utilities/Header/v1_0/UBNHeader" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.unionbank.com.ng/utilities/Header/v1_0/UBNHeader" xmlns:Q1="http://www.unionbank.com.ng/utilities/Header/v1_0/UBNHeader">
+
+
+    <element name="UBNHeader" type="Q1:UBNHeaderType"/>
+    
+    <complexType name="UBNHeaderType">
+    	<sequence>
+    		<element name="MessageId" type="string" minOccurs="1" maxOccurs="1">
+                <annotation>
+                	<documentation>Clients message ID in order to track the message within unionbank.</documentation>
+                </annotation>
+    		</element>
+    		<element name="CorrelationId" type="string" minOccurs="1" maxOccurs="1">
+                <annotation>
+                	<documentation>Clients correlation ID in order to tie more than one message together. For example the customer or order number</documentation>
+                </annotation>
+    		</element>
+    		<element name="InternalMessageId" type="string" minOccurs="0" maxOccurs="1">
+                <annotation>
+                	<documentation>Unionbanks Internal Unique message ID in order to track the message in Unionbank. This is auto-generated.</documentation>
+                </annotation>  
+            </element>
+    		<element name="ClientId" type="string" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="Service" type="string" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="Operation" type="string" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="ClientIp" type="string" minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="UserId" type="string" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="RequestedTimestamp" type="dateTime" minOccurs="1" maxOccurs="1">
+              <annotation>
+                	<documentation>This is auto-generated. There is no need to populate</documentation>
+                </annotation>
+    		</element>
+    		<element name="ResponseTimestamp" type="dateTime" minOccurs="0" maxOccurs="1">
+               <annotation>
+                	<documentation>This is auto-generated. There is no need to populate</documentation>
+                </annotation>
+    		</element>
+    		<element name="BusinessKeyPairs" type="Q1:BusinessKeyPairs" minOccurs="0" maxOccurs="1">
+                <annotation>
+                	<documentation>Extensible custom meta data that might be required that is not part of the current elements</documentation>
+                </annotation>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BusinessKeyPairs">
+    	<sequence>
+    		<element name="BusinessKey" type="Q1:BusinessKeyType" maxOccurs="unbounded" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BusinessKeyType">
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute name="name" type="string"/>
+    		</extension>
+    	</simpleContent>
+    </complexType>
+</schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@APPSUPPORT-009.unionbank-ng.unionbankgroup.local:1521:xe</property>
+    <property name="hibernate.connection.username">aydeggy</property>
+    <property name="hibernate.connection.password">Mayor12</property>
+    <property name="connection.pool_size">50</property>
+    <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+    <!-- manimum size -->
+    <property name="hibernate.c3p0.min_size">10</property>
+    <!-- maximum size -->
+    <property name="hibernate.c3p0.max_size">40</property>
+    <!-- timeout before connections are closed 
+  property name="hibernate.c3p0.timeout">1800</property
+ maximum statements that can be made -->
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <!-- maximum statements that can be made -->
+    <property name="hibernate.c3p0.timeout">1800</property>
+    <property name="hibernate.c3p0.idleTestPeriod ">50</property>
+    <property name="myeclipse.connection.profile">Oracle</property>
+    <!--property name="hibernate.c3p0.idleTestPeriod ">50</property>
+    <property name="hibernate.c3p0.idleTestPeriod ">50</property>-->
+    <mapping resource="com/unionbank/webpay/db/dao/Merchants.hbm.xml"/>
+    <mapping resource="com/unionbank/webpay/db/dao/Transactions.hbm.xml"/>
+    <mapping resource="com/unionbank/webpay/db/dao/vwTransactions.hbm.xml"/>
+    
+    
+  </session-factory>
+</hibernate-configuration>

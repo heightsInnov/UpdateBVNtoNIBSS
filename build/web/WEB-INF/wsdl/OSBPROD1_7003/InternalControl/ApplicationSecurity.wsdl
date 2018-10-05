@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions name="UBN_SMS_Service" targetNamespace="http://applications.unionbankng.com/ws" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://applications.unionbankng.com/ws" xmlns:WL5G3N2="http://www.unionbank.com.ng/utilities/Header/v1_0/UBNHeader" xmlns:WL5G3N3="http://www.w3.org/2006/05/addressing/wsdl" xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://applications.unionbankng.com/ws/Imports" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://applications.unionbankng.com/ws" xmlns:ubn="http://www.unionbank.com.ng/utilities/Header/v1_0/UBNHeader" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://applications.unionbankng.com/ws" schemaLocation="http://OSBPROD1:7003/InternalControl/ApplicationSecurity?SCHEMA%2FGMD+Departments%2FInternal+Control%2FWSDLs%2FXMLSchema_273790657"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="http://OSBPROD1:7003/InternalControl/ApplicationSecurity?SCHEMA%2FGMD+Departments%2FInternal+Control%2FWSDLs%2FXMLSchema_-231767968"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/UBN.Security.Sms" schemaLocation="http://OSBPROD1:7003/InternalControl/ApplicationSecurity?SCHEMA%2FGMD+Departments%2FInternal+Control%2FWSDLs%2FXMLSchema_-737326593"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="http://OSBPROD1:7003/InternalControl/ApplicationSecurity?SCHEMA%2FGMD+Departments%2FInternal+Control%2FWSDLs%2FXMLSchema_-1242885218"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/UBN.AuthenticationViaAD.Cls" schemaLocation="http://OSBPROD1:7003/InternalControl/ApplicationSecurity?SCHEMA%2FGMD+Departments%2FInternal+Control%2FWSDLs%2Fschemas.datacontract.org_2004_07_UBN.AuthenticationViaAD.Cls"/>
+      <xsd:import namespace="http://www.unionbank.com.ng/utilities/Header/v1_0/UBNHeader" schemaLocation="http://OSBPROD1:7003/InternalControl/ApplicationSecurity?SCHEMA%2FOperations+IT+And+Services%2FInformation+Technology%2FUtilities%2FCommon%2FHeader%2Fv1_0%2FArtifacts%2FUBNHeader"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="UBN_SMS_Service_GetUserRoleEventStatus_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetUserRoleEventStatus" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetUserRoleEventStatus_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetUserRoleEventStatusResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AdAuthenticate_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:AdAuthenticate" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBNHeaderMessage">
+    <WL5G3N0:part element="WL5G3N2:UBNHeader" name="UBNHeader"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_RequestRemoveUserFromRoles_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:RequestRemoveUserFromRoles" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_RequestRemoveUserFromRoles_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:RequestRemoveUserFromRolesResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AdAuthenticate_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:AdAuthenticateResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_Ad2xAuthenticate_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:Ad2xAuthenticate" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_Ad2xAuthenticate_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:Ad2xAuthenticateResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_TwoXtorAuth_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:TwoXtorAuth" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_TwoXtorAuth_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:TwoXtorAuthResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsUserInRole_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsUserInRole" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsUserInRole_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsUserInRoleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_RoleExist_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:RoleExist" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_RoleExist_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:RoleExistResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetRolesForUser_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetRolesForUser" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetRolesForUser_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetRolesForUserResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetUsersInRole_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetUsersInRole" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetUsersInRole_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetUsersInRoleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_RemoveUserFromRoles_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:RemoveUserFromRoles" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_RemoveUserFromRoles_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:RemoveUserFromRolesResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AddUserToRole_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:AddUserToRole" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AddUserToRole_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:AddUserToRoleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AuthorizeUserRole_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:AuthorizeUserRole" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AuthorizeUserRole_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:AuthorizeUserRoleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_CreateRole_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:CreateRole" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_CreateRole_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:CreateRoleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_DeleteRole_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:DeleteRole" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_DeleteRole_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:DeleteRoleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetUserProfile_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetUserProfile" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetUserProfile_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetUserProfileResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsUserExist_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsUserExist" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsUserExist_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsUserExistResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetAllRoles_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetAllRoles" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetAllRoles_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetAllRolesResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetAllUsers_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetAllUsers" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetAllUsers_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetAllUsersResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_ChangeCustomerUserPassword_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:ChangeCustomerUserPassword" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_ChangeCustomerUserPassword_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:ChangeCustomerUserPasswordResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_ChangeCustomerUserStatus_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:ChangeCustomerUserStatus" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_ChangeCustomerUserStatus_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:ChangeCustomerUserStatusResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_CreateCustomerUser_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:CreateCustomerUser" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_CreateCustomerUser_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:CreateCustomerUserResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_CustomAuthentication_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:CustomAuthentication" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_CustomAuthentication_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:CustomAuthenticationResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsCustomerUserExist_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsCustomerUserExist" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsCustomerUserExist_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsCustomerUserExistResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_UpdateUserProfile_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:UpdateUserProfile" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_UpdateUserProfile_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:UpdateUserProfileResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetModule_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetModule" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetModule_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetModuleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetModules_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetModules" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetModules_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetModulesResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetBranchReportLine_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetBranchReportLine" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_GetBranchReportLine_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:GetBranchReportLineResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AddModule_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:AddModule" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_AddModule_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:AddModuleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_UpdateModule_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:UpdateModule" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_UpdateModule_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:UpdateModuleResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsModuleExist_InputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsModuleExist" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="UBN_SMS_Service_IsModuleExist_OutputMessage">
+    <WL5G3N0:part element="WL5G3N1:IsModuleExistResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="UBN_SMS_Service">
+    <WL5G3N0:operation name="GetUserRoleEventStatus">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUserRoleEventStatus" message="WL5G3N1:UBN_SMS_Service_GetUserRoleEventStatus_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUserRoleEventStatusResponse" message="WL5G3N1:UBN_SMS_Service_GetUserRoleEventStatus_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AdAuthenticate">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AdAuthenticate" message="WL5G3N1:UBN_SMS_Service_AdAuthenticate_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AdAuthenticateResponse" message="WL5G3N1:UBN_SMS_Service_AdAuthenticate_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="Ad2xAuthenticate">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/Ad2xAuthenticate" message="WL5G3N1:UBN_SMS_Service_Ad2xAuthenticate_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/Ad2xAuthenticateResponse" message="WL5G3N1:UBN_SMS_Service_Ad2xAuthenticate_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="TwoXtorAuth">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/TwoXtorAuth" message="WL5G3N1:UBN_SMS_Service_TwoXtorAuth_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/TwoXtorAuthResponse" message="WL5G3N1:UBN_SMS_Service_TwoXtorAuth_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsUserInRole">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsUserInRole" message="WL5G3N1:UBN_SMS_Service_IsUserInRole_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsUserInRoleResponse" message="WL5G3N1:UBN_SMS_Service_IsUserInRole_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="RoleExist">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/RoleExist" message="WL5G3N1:UBN_SMS_Service_RoleExist_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/RoleExistResponse" message="WL5G3N1:UBN_SMS_Service_RoleExist_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetRolesForUser">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetRolesForUser" message="WL5G3N1:UBN_SMS_Service_GetRolesForUser_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetRolesForUserResponse" message="WL5G3N1:UBN_SMS_Service_GetRolesForUser_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetUsersInRole">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUsersInRole" message="WL5G3N1:UBN_SMS_Service_GetUsersInRole_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUsersInRoleResponse" message="WL5G3N1:UBN_SMS_Service_GetUsersInRole_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="RemoveUserFromRoles">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/RemoveUserFromRoles" message="WL5G3N1:UBN_SMS_Service_RemoveUserFromRoles_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/RemoveUserFromRolesResponse" message="WL5G3N1:UBN_SMS_Service_RemoveUserFromRoles_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AddUserToRole">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AddUserToRole" message="WL5G3N1:UBN_SMS_Service_AddUserToRole_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AddUserToRoleResponse" message="WL5G3N1:UBN_SMS_Service_AddUserToRole_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AuthorizeUserRole">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AuthorizeUserRole" message="WL5G3N1:UBN_SMS_Service_AuthorizeUserRole_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AuthorizeUserRoleResponse" message="WL5G3N1:UBN_SMS_Service_AuthorizeUserRole_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CreateRole">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/CreateRole" message="WL5G3N1:UBN_SMS_Service_CreateRole_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/CreateRoleResponse" message="WL5G3N1:UBN_SMS_Service_CreateRole_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="DeleteRole">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/DeleteRole" message="WL5G3N1:UBN_SMS_Service_DeleteRole_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/DeleteRoleResponse" message="WL5G3N1:UBN_SMS_Service_DeleteRole_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetUserProfile">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUserProfile" message="WL5G3N1:UBN_SMS_Service_GetUserProfile_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUserProfileResponse" message="WL5G3N1:UBN_SMS_Service_GetUserProfile_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsUserExist">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsUserExist" message="WL5G3N1:UBN_SMS_Service_IsUserExist_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsUserExistResponse" message="WL5G3N1:UBN_SMS_Service_IsUserExist_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetAllRoles">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetAllRoles" message="WL5G3N1:UBN_SMS_Service_GetAllRoles_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetAllRolesResponse" message="WL5G3N1:UBN_SMS_Service_GetAllRoles_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetAllUsers">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetAllUsers" message="WL5G3N1:UBN_SMS_Service_GetAllUsers_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetAllUsersResponse" message="WL5G3N1:UBN_SMS_Service_GetAllUsers_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ChangeCustomerUserPassword">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/ChangeCustomerUserPassword" message="WL5G3N1:UBN_SMS_Service_ChangeCustomerUserPassword_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/ChangeCustomerUserPasswordResponse" message="WL5G3N1:UBN_SMS_Service_ChangeCustomerUserPassword_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ChangeCustomerUserStatus">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/ChangeCustomerUserStatus" message="WL5G3N1:UBN_SMS_Service_ChangeCustomerUserStatus_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/ChangeCustomerUserStatusResponse" message="WL5G3N1:UBN_SMS_Service_ChangeCustomerUserStatus_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CreateCustomerUser">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/CreateCustomerUser" message="WL5G3N1:UBN_SMS_Service_CreateCustomerUser_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/CreateCustomerUserResponse" message="WL5G3N1:UBN_SMS_Service_CreateCustomerUser_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CustomAuthentication">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/CustomAuthentication" message="WL5G3N1:UBN_SMS_Service_CustomAuthentication_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/CustomAuthenticationResponse" message="WL5G3N1:UBN_SMS_Service_CustomAuthentication_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsCustomerUserExist">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsCustomerUserExist" message="WL5G3N1:UBN_SMS_Service_IsCustomerUserExist_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsCustomerUserExistResponse" message="WL5G3N1:UBN_SMS_Service_IsCustomerUserExist_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="UpdateUserProfile">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/UpdateUserProfile" message="WL5G3N1:UBN_SMS_Service_UpdateUserProfile_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/UpdateUserProfileResponse" message="WL5G3N1:UBN_SMS_Service_UpdateUserProfile_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetModule">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetModule" message="WL5G3N1:UBN_SMS_Service_GetModule_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetModuleResponse" message="WL5G3N1:UBN_SMS_Service_GetModule_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetModules">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetModules" message="WL5G3N1:UBN_SMS_Service_GetModules_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetModulesResponse" message="WL5G3N1:UBN_SMS_Service_GetModules_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetBranchReportLine">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetBranchReportLine" message="WL5G3N1:UBN_SMS_Service_GetBranchReportLine_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetBranchReportLineResponse" message="WL5G3N1:UBN_SMS_Service_GetBranchReportLine_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AddModule">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AddModule" message="WL5G3N1:UBN_SMS_Service_AddModule_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/AddModuleResponse" message="WL5G3N1:UBN_SMS_Service_AddModule_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="UpdateModule">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/UpdateModule" message="WL5G3N1:UBN_SMS_Service_UpdateModule_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/UpdateModuleResponse" message="WL5G3N1:UBN_SMS_Service_UpdateModule_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsModuleExist">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsModuleExist" message="WL5G3N1:UBN_SMS_Service_IsModuleExist_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsModuleExistResponse" message="WL5G3N1:UBN_SMS_Service_IsModuleExist_OutputMessage"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="RequestRemoveUserFromRoles">
+      <WL5G3N0:input WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/RequestRemoveUserFromRoles" message="WL5G3N1:UBN_SMS_Service_RequestRemoveUserFromRoles_InputMessage"/>
+      <WL5G3N0:output WL5G3N3:Action="http://applications.unionbankng.com/ws/UBN_SMS_Service/RequestRemoveUserFromRolesResponse" message="WL5G3N1:UBN_SMS_Service_RequestRemoveUserFromRoles_OutputMessage"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="BasicHttpBinding_UBN_SMS_Service" type="WL5G3N1:UBN_SMS_Service">
+    <WL5G3N4:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="GetUserRoleEventStatus">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUserRoleEventStatus" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AdAuthenticate">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/AdAuthenticate" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="Ad2xAuthenticate">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/Ad2xAuthenticate" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="TwoXtorAuth">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/TwoXtorAuth" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsUserInRole">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsUserInRole" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="RoleExist">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/RoleExist" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetRolesForUser">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetRolesForUser" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetUsersInRole">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUsersInRole" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="RemoveUserFromRoles">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/RemoveUserFromRoles" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AddUserToRole">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/AddUserToRole" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AuthorizeUserRole">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/AuthorizeUserRole" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CreateRole">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/CreateRole" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="DeleteRole">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/DeleteRole" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetUserProfile">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetUserProfile" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsUserExist">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsUserExist" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetAllRoles">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetAllRoles" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetAllUsers">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetAllUsers" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ChangeCustomerUserPassword">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/ChangeCustomerUserPassword" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ChangeCustomerUserStatus">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/ChangeCustomerUserStatus" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CreateCustomerUser">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/CreateCustomerUser" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CustomAuthentication">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/CustomAuthentication" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsCustomerUserExist">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsCustomerUserExist" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="UpdateUserProfile">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/UpdateUserProfile" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetModule">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetModule" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetModules">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetModules" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GetBranchReportLine">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/GetBranchReportLine" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AddModule">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/AddModule" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="UpdateModule">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/UpdateModule" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="IsModuleExist">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/IsModuleExist" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="RequestRemoveUserFromRoles">
+      <WL5G3N4:operation soapAction="http://applications.unionbankng.com/ws/UBN_SMS_Service/RequestRemoveUserFromRoles" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N4:header message="WL5G3N1:UBNHeaderMessage" part="UBNHeader" use="literal"/>
+        <WL5G3N4:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="BasicHttpBinding_UBN_SMS_ServiceQSService">
+    <WL5G3N0:port binding="WL5G3N1:BasicHttpBinding_UBN_SMS_Service" name="BasicHttpBinding_UBN_SMS_ServiceQSPort">
+      <WL5G3N4:address location="http://OSBPROD1:7003/InternalControl/ApplicationSecurity"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

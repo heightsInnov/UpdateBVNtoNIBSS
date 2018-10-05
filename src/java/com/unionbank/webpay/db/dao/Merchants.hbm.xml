@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.unionbank.webpay.db.dao.MerchantsDAO" table="UBNPAY_Merchants">
+    <id column="merchant_id" length="50" name="merchantID" type="long">
+      <generator class="sequence">
+        <param name="sequence">MT_CRE_SEQ</param>
+      </generator>
+    </id>    
+     
+     <property column="merchant_name" name="merchantName" type="string"/>
+    <property column="site_redirect_url" name="siteRedirectUrl" type="string"/>
+    <property column="pay_item_id" name="payItemId" type="string"/>
+    <property column="mac_key" name="macKey" type="string"/>
+    <property column="date_created" name="dateCreated" type="java.util.Date"/>
+    <property column="auth_flag" length="2" name="authFlag" type="string"/>
+    <property column="disable_flag" length="2" name="disableFlag" type="string"/>
+  </class>
+</hibernate-mapping>

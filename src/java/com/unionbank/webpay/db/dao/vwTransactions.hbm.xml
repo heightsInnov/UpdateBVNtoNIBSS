@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.unionbank.webpay.db.dao.vwTransactionsDAO" table="vwMerchtTransList">
+        <id column="TXN_ID"  name="txnId" type="long">
+            <generator class="assigned"/>
+        </id>        
+        <property column="MERCHANT_NAME" name="merchantName"   type="string"/>
+        <property column="TNX_REF" name="txnRef"   type="string"/>
+        <property column="PAY_REF" name="payRef" type="string"/>
+        <property column="DATE_CREATED" name="dateCreated" type="java.util.Date"/>
+         <property column="RESPONSE_DESC" name="responseDesc"    type="string"/>
+          <property column="AMOUNT_LOCAL" name="amountLc"    type="string"/>
+         <property column="RESPONSE_CODE" name="responseCode"    type="string"/>
+         <property column="RESPONSE_CODE_UPDATE_DATE" name="ResponseUpdateDate"  not-null="true" type="java.util.Date"/>
+         
+        
+    </class>
+</hibernate-mapping>
